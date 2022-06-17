@@ -6,7 +6,7 @@ pipeline{
                 sh 'ls'
                 sh 'pwd'
                 sh 'tar -jcvf SAM_Binary.tar.bz2 *'
-                archiveArtifacts artifacts: 'SAM_Binary.tar.bz2', followSymlinks: false
+                archiveArtifacts artifacts: '*.bz2', followSymlinks: false
                 sh 'ls'
             }
         }
@@ -14,7 +14,7 @@ pipeline{
             steps{
                 echo "This is CopyArtifact2"
                 sh 'ls'
-                copyArtifacts filter: 'SAM_Binary.tar.bz2', projectName: 'CopyArtifacts1', selector: lastSuccessful(), target: 'CopyArtifact2'
+                copyArtifacts filter: '*.bz2', projectName: 'CopyArtifacts1', selector: lastSuccessful(), target: 'CopyArtifact2'
                 sh 'ls'
             }
         }
