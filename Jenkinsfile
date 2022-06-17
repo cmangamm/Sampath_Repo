@@ -6,11 +6,7 @@ pipeline{
                 sh 'ls'
                 sh 'pwd'
                 sh 'tar -jcvf SAM_Binary.tar.bz2 *'
-                post{
-                    always{
-                        archiveArtifacts artifacts: '*.bz2', followSymlinks: false
-                    }
-                }
+                archiveArtifacts artifacts: '*.bz2', followSymlinks: false
                 sh 'ls'
             }
         }
