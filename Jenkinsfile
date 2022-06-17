@@ -18,6 +18,8 @@ pipeline{
                 //copyArtifacts filter: '*.bz2', projectName: 'CopyArtifacts1', selector: lastSuccessful()
                 copyArtifacts filter: '*.bz2', fingerprintArtifacts: true, projectName: 'CopyArtifacts1', selector: workspace()
                 sh 'ls'
+                sh 'tar -xjvf SAM_Binary.tar.bz2'
+                sh 'cat sample.html'
             }
         }
     }
