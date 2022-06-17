@@ -16,7 +16,8 @@ pipeline{
                 sh 'ls'
                 //copyArtifacts filter: '*.bz2', projectName: 'CopyArtifacts1', selector: lastSuccessful()
                 //copyArtifacts filter: '*.bz2', projectName: 'CopyArtifacts1', selector: lastSuccessful()
-                copyArtifacts filter: '*.bz2', fingerprintArtifacts: true, projectName: 'CopyArtifacts1', selector: workspace()
+                ///*Working*/copyArtifacts filter: '*.bz2', fingerprintArtifacts: true, projectName: 'CopyArtifacts1', selector: workspace()
+                copyArtifacts filter: '*.bz2', fingerprintArtifacts: true, projectName: 'CopyArtifacts1', selector: lastCompleted()
                 sh 'ls'
                 sh 'tar -xjvf SAM_Binary.tar.bz2'
                 sh 'cat sample.html'
