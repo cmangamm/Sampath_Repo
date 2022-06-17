@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('CopyArtifact1'){
+        stage('CopyArtifact1_Stage'){
             steps{
                 sh 'ls'
                 sh 'pwd'
@@ -10,7 +10,7 @@ pipeline{
                 sh 'ls'
             }
         }
-        stage('CopyArtifact2'){
+        stage('CopyArtifact2_Stage'){
             steps{
                 echo "This is CopyArtifact2"
                 sh 'ls'
