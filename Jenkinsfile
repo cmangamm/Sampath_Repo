@@ -8,7 +8,7 @@ pipeline{
                 sh 'tar -jcvf SAM_Binary.tar.bz2 *'
                 post{
                     always{
-                        archiveArtifacts artifacts: '*.bz2', caseSensitive: false, defaultExcludes: false, followSymlinks: false
+                        archiveArtifacts artifacts: '*.bz2', followSymlinks: false
                     }
                 }
                 sh 'ls'
