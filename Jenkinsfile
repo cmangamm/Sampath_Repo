@@ -14,7 +14,7 @@ pipeline{
             steps{
                 echo "This is CopyArtifact2"
                 sh 'ls'
-                copyArtifacts filter: '*.bz2', projectName: 'CopyArtifacts1', selector: lastSuccessful()
+                copyArtifacts filter: '*.bz2', projectName: 'CopyArtifacts1/*.bz2', selector: lastSuccessful()
                 sh 'ls'
             }
         }
